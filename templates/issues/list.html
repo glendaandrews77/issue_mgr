@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Issues{% endblock title %}
+
+{% block content %}
+<ul>
+<h1>Issues</h1>
+ {% for issue in issue_list %}
+ 
+    <li class="border w-25 mb-2">
+        <a href="{% url 'detail' issue.id %}">
+            <p>{{issue.summary}}</p>
+        </a>
+        <p>{{issue.status}}</p>
+        <small>Created on: {{ issue.created_on }}</small>
+        <p>{{ issue.assignee }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

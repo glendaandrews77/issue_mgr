@@ -1,0 +1,3 @@
+Admin superuser 
+Username: admin
+Password: password123

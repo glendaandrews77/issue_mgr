@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'issues',
+    'accounts',
+    'pages'
+
+
 ]
 
 MIDDLEWARE = [
@@ -62,9 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'accounts',
-                'issues',
-                'pages',
+                
             ],
         },
     },
@@ -124,5 +127,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL="to_do_list"
 
 AUTH_USER_MODEL = "accounts.CustomUser"

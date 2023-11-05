@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{%block title %}{ issue.title}{%endblock title%}
+
+{% block content %}
+<h1>{{issue.summary}}</h1>
+<h3>{{issue.description}}</h3>
+<h3>{{issue.status}}</h3>
+<small>Created on: {{ issue.created_on }}</small>
+<p>{{ issue.assignee }}</p>
+<button type="button" class="btn">Base class</button>
+
+<a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+<a class="btn btn-warning" href="{% url 'edit' issue.id%}">Edit</a>
+{% endblock content %}
